@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+ol.nav-menu > li + li:before {
+	content: ' ';
+	@apply inline-block align-middle h-1 w-1 bg-gold mr-5 ml-2 rounded-full;
+}
+
+.awssld__content {
+	@apply rounded-xl overflow-hidden;
+}
+
+.roadmap {
+	@apply relative pb-[30px] z-10;
+}
+
+.roadmap {
+	@apply pb-0;
+}
+
+.roadmap-wrap {
+	@apply relative pt-[40px] pb-[10px] mb-[40px] mx-auto;
+}
+
+.roadmap-wrap {
+	@apply mx-0;
+}
+
+.roadmap-wrap:before,
+.roadmap-wrap:after {
+	content: '';
+	@apply absolute top-0 bottom-0 z-[7];
+}
+
+.roadmap-line {
+	content: '';
+	@apply absolute left-[19px] top-0 bg-white/30 h-full w-[2px] z-[9];
+}
+
+.roadmap-line:after,
+.roadmap-line:before {
+	content: '';
+	@apply absolute bg-white/30 h-[10px] w-[10px] rounded-[50%] -left-1;
+}
+
+.roadmap-line:before {
+	@apply top-0;
+}
+
+.roadmap-line:after {
+	@apply bottom-0;
+}
+
+.roadmap-year {
+	@apply relative rounded-[50%] text-white bg-gold h-[50px] w-[50px] text-center leading-[50px] font-bold text-xs -left-[5px];
+}
+
+.roadmap-step {
+	@apply relative bg-gold/5 shadow-lg lg:rounded-xl p-6 lg:p-10 bg-clip-padding bg-opacity-60 border border-white/30 ml-[50px] pt-[20px] pb-[15px] px-[20px] max-w-[380px];
+}
+
+.roadmap:nth-child(3) .roadmap-step {
+	@apply rounded-t-xl;
+}
+
+.roadmap:last-child .roadmap-step {
+	@apply rounded-b-xl;
+}
+
+.roadmap-step:before,
+.roadmap-step:after {
+	content: '';
+	@apply absolute;
+}
+
+.roadmap-step:before {
+	@apply top-[34px] -left-[41px] h-[18px] w-[18px] bg-gold border-[5px] border-solid border-white rounded-[50%] z-[1];
+}
+
+.roadmap-step:after {
+	@apply top-[42px] -left-[22px] h-[2px] w-[22px] bg-white/30;
+}
+
+.roadmap-step p:last-child {
+	@apply mb-0;
+}
+
+.roadmap-head {
+	@apply relative mb-[10px] pr-[35px];
+}
+
+.roadmap-finished .roadmap-head:after {
+	content: '✓';
+	transform: translateY(-50%);
+	@apply absolute top-[50%] right-0 h-[32px] w-[32px] leading-8 rounded-[50%] text-center text-white bg-[#23C99D] font-bold text-[0.88rem];
+}
+
+.roadmap-time {
+	@apply block text-gray-200 text-[13px] 2xl:text-lg uppercase;
+}
+
+.roadmap-title {
+	@apply font-bold text-[16px] 2xl:text-xl text-gold;
+}
+
+@media (min-width: 992px) {
+	.roadmap {
+		@apply flex;
+	}
+
+	.roadmap-wrap {
+		@apply max-w-full mb-[60px] pt-[40px] pb-[10px] px-0;
+	}
+
+	.roadmap-line {
+		@apply left-[50%] -ml-[1px];
+	}
+
+	.roadmap-left {
+		@apply justify-start -mt-[80px];
+	}
+
+	.roadmap-left .roadmap-step {
+		@apply mr-[80px] ml-0;
+	}
+
+	.roadmap-left .roadmap-step:before {
+		@apply -right-[91px] left-auto;
+	}
+
+	.roadmap-left .roadmap-step:after {
+		@apply -right-[78px] left-auto;
+	}
+
+	.roadmap-right {
+		@apply justify-end;
+	}
+
+	.roadmap-right .roadmap-step {
+		@apply ml-[80px];
+	}
+
+	.roadmap-year {
+		@apply static h-[60px] w-[60px] leading-[60px] text-[16px] mx-auto;
+	}
+
+	.roadmap-step {
+		@apply w-full pt-[40px] pb-[35px] px-[30px];
+	}
+
+	.roadmap-step:before,
+	.roadmap-step:after {
+		content: '';
+		@apply absolute;
+	}
+
+	.roadmap-step:before {
+		@apply -left-[91px];
+	}
+
+	.roadmap-step:after {
+		@apply -left-[78px] w-[78px];
+	}
+
+	.roadmap-head {
+		@apply mb-[15px];
+	}
+
+	.roadmap-time {
+		@apply text-[14px];
+	}
+
+	.roadmap-title {
+		@apply text-[18px];
+	}
+}
+@media (min-width: 1200px) {
+	.roadmap-left .roadmap-step:before {
+		@apply -right-[91px];
+	}
+
+	.roadmap-left .roadmap-step:after {
+		@apply -right-[73px];
+	}
+
+	.roadmap-step:before {
+		@apply -left-[91px];
+	}
+
+	.roadmap-step:after {
+		@apply -left-[73px] w-[73px];
+	}
+
+	.roadmap-step-s1:before {
+		@apply left-[50%];
+	}
+}
