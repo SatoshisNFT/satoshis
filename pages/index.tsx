@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -13,7 +13,7 @@ import { FiX } from 'react-icons/fi';
 import { SiDiscord, SiTwitter } from 'react-icons/si';
 import * as ringAnimationData from '../assets/animations/ring.json';
 import useMousePosition from '../hooks/useMousePosition';
-import { useState } from 'react';
+import Banner from '../components/Banner';
 
 interface IProps {
 	seo: {
@@ -158,6 +158,8 @@ const Home: NextPage<IProps> = ({ seo, social, countdownDate }) => {
 			<div className="absolute top-0 left-0 place-self-center h-24 w-24 bg-gold rounded-full blur-3xl" />
 			<div className="absolute right-0 bottom-0 place-self-center h-24 w-24 bg-gold/50 rounded-full blur-3xl" />
 
+			<Banner />
+
 			<header ref={headerRef} className="absolute top-0 right-0 left-0 w-full">
 				<Popover>
 					<div className="flex lg:flex-row justify-between items-center my-8 mx-6 lg:mx-16 2xl:my-16 2xl:mx-28">
@@ -184,7 +186,7 @@ const Home: NextPage<IProps> = ({ seo, social, countdownDate }) => {
 								</li>
 								<li>
 									<a href="/litepaper.pdf" target="_blank" rel="noopener noreferrer">
-										LitePaper
+										Litepaper
 									</a>
 								</li>
 								<li>
@@ -196,7 +198,7 @@ const Home: NextPage<IProps> = ({ seo, social, countdownDate }) => {
 							{social?.telegram && (
 								<li>
 									<a href={social?.telegram} target="_blank" rel="noopener noreferrer" className="">
-										<div className="relative h-8 w-8 2xl:h-14 2xl:w-14">
+										<div className="relative h-6 w-6 2xl:h-12 2xl:w-12">
 											<Image src="/assets/social-icons/telegram.png" alt="Telegram" layout="fill" />
 										</div>
 									</a>
@@ -205,7 +207,7 @@ const Home: NextPage<IProps> = ({ seo, social, countdownDate }) => {
 							{social?.twitter && (
 								<li>
 									<a href={social?.twitter} target="_blank" rel="noopener noreferrer" className="">
-										<div className="relative h-8 w-8 2xl:h-14 2xl:w-14">
+										<div className="relative h-6 w-6 2xl:h-12 2xl:w-12">
 											<Image src="/assets/social-icons/twitter.png" alt="Twitter" layout="fill" />
 										</div>
 									</a>
@@ -214,7 +216,7 @@ const Home: NextPage<IProps> = ({ seo, social, countdownDate }) => {
 							{social?.discord && (
 								<li>
 									<a href={social?.discord} target="_blank" rel="noopener noreferrer" className="">
-										<div className="relative h-8 w-8 2xl:h-14 2xl:w-14">
+										<div className="relative h-6 w-6 2xl:h-12 2xl:w-12">
 											<Image src="/assets/social-icons/discord.png" alt="Discord" layout="fill" />
 										</div>
 									</a>
