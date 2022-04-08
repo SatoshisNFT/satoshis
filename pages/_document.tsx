@@ -11,7 +11,7 @@ class MyDocument extends Document {
 			<Html>
 				<Head />
 
-				<body className="bg-black overflow-x-hidden 2xl:text-2xl">
+				<body className="overflow-x-hidden 2xl:text-2xl">
 					<Main />
 					<NextScript />
 				</body>
